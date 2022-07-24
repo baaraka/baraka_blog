@@ -3,7 +3,7 @@ import "./post.css"
 export default function Post() {
   return (
     <div className="post">
-        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/2B87/production/_90934111_1-1.jpg" alt="" className="postImg" />
+        <img src="https://img.freepik.com/premium-photo/male-internet-hacker-hood-sitting-screens-back-view-illegal-web-programmer-workplace-criminal-occupation-data-hacking-cyber-security_266732-18744.jpg" alt="" className="postImg" />
         <div className="postInfo">
             <div className="postCats">
                 <span className="postCat">music</span>
