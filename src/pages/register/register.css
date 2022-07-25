@@ -1,0 +1,45 @@
+.register {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(https://media.istockphoto.com/photos/abstract-polygonal-blue-background-picture-id1182956407?k=20&m=1182956407&s=170667a&w=0&h=CQXlmev1W-dxZMBM27Bl2feMC4Dis6L9jLh7VpLKROE=);
+  background-size: cover;
+}
+.registerTitle {
+  font-size: 50px;
+  color: white;
+}
+.registerLabel {
+  color: white;
+  padding: 10px;
+}
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.registerForm > input {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+.registerButton {
+  margin-top: 20px;
+  background-color: chocolate;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.registerLoginButton {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: teal;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
