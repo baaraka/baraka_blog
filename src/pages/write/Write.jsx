@@ -1,10 +1,21 @@
+import React, { useState } from "react";
 import "./write.css";
 
 export default function Write() {
+  const [imageFile, setImageFile] = useState(null);
+
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    setImageFile(URL.createObjectURL(file));
+  };
+
   return (
     <div className="write">
       <img
-        src="https://img.freepik.com/premium-photo/male-internet-hacker-hood-sitting-screens-back-view-illegal-web-programmer-workplace-criminal-occupation-data-hacking-cyber-security_266732-18744.jpg"
+        src={
+          imageFile ||
+          "https://images.pexels.com/photos/5926389/pexels-photo-5926389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        }
         alt=""
         className="writeImg"
       />
@@ -13,9 +24,9 @@ export default function Write() {
           <label htmlFor="fileInput">
             <i className="writeIcon fa-solid fa-plus"></i>
           </label>
-          <input type="file" id="fileInput" style={{ display: "none" }} />
           <input
             type="text"
+            id="title"
             placeholder="Title"
             className="writeInput"
             autoFocus={true}
@@ -25,10 +36,11 @@ export default function Write() {
           <textarea
             placeholder="Tell Your Story..."
             type="text"
+            id="desc"
             className="writeInput writeText"
           ></textarea>
         </div>
-        <button className="writeSubmit">publish</button>
+        <button className="writeSubmit">Publish</button>
       </form>
     </div>
   );
