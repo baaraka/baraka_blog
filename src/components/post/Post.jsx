@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import UseFetch from "../../hooks/UseFetch";
 import "./post.css";
 import { formatDistanceToNow } from "date-fns";
-import SinglePost from "../singlePost/SinglePost";
 
 export default function Post() {
   const { data, loading, error } = UseFetch("http://localhost:8000/api/posts");
