@@ -1,6 +1,7 @@
 .post {
   width: 385px;
   margin: 0px 25px 40px 25px;
+  cursor: pointer;
 }
 .postImg {
   width: 100%;
