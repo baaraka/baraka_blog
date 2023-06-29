@@ -48,11 +48,16 @@ export default function TopBar() {
       <div className="topRight">
         <span style={{ marginRight: "10px" }}>{user && user.username}</span>
         {user ? (
-          <img
-            className="topImg"
-            src="https://images.unsplash.com/photo-1519669417670-68775a50919c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhhY2tlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-            alt=""
-          />
+          <Link
+            to="/settings"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <img
+              className="topImg"
+              src="https://images.unsplash.com/photo-1519669417670-68775a50919c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhhY2tlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+              alt=""
+            />
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
