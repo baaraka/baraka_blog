@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import UseFetch from "../../hooks/UseFetch";
 import "./singlepost.css";
 
 export default function SinglePost() {
+  const pf = "http://localhost:8000/images/";
+
   const location = useLocation();
 
   const id = location.pathname.split("/")[2];
@@ -20,7 +22,9 @@ export default function SinglePost() {
         <>
           {data && (
             <div className="singlePostWrapper">
-              <img src={data.photo} alt="" className="singlePostImg" />
+              {data.photo && (
+                <img src={pf + data.photo} alt="" className="singlePostImg" />
+              )}
               <h1 className="singlePostTitle">
                 {data.title}
                 <div className="singlePostEdit">
@@ -30,9 +34,16 @@ export default function SinglePost() {
               </h1>
               <div className="singlePostInfo">
                 <span className="singlePostAuthor">
-                  Author: <b>Barack</b>
+                  <Link
+                    to={`/?user=${data.username}`}
+                    style={{ color: "inherit", textDecoration: "none" }}
+                  >
+                    Author: <b>{data.username}</b>
+                  </Link>
                 </span>
-                <span className="singlePostDate">{data.createdAt}</span>
+                <span className="singlePostDate">
+                  {new Date(data.createdAt).toDateString()}
+                </span>
               </div>
               <p className="singlePostDesc">{data.desc}</p>
             </div>
