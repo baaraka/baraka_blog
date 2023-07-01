@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import UseFetch from "../../hooks/UseFetch";
 import "./sidebar.css";
 
@@ -27,12 +27,19 @@ export default function Sidebar() {
         <ul className="sidebarList">
           {loading ? (
             "loading please wait.."
+          ) : error ? (
+            "Error in fetching data"
           ) : (
             <>
               {data.map((item) => (
-                <li className="sidebarListItem" key={item._id}>
-                  {item.name}
-                </li>
+                <Link
+                  to={`/?cat=${item.name}`}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <li className="sidebarListItem" key={item._id}>
+                    {item.name}
+                  </li>
+                </Link>
               ))}
             </>
           )}
