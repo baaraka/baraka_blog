@@ -37,6 +37,9 @@
   font-family: "varela round", sans-serif;
   color: goldenrod;
 }
+.singlePostAuthor {
+  cursor: pointer;
+}
 .singlePostDesc {
   color: #666;
   font-size: 17px;
