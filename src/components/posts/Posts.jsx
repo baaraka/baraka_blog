@@ -2,10 +2,12 @@ import React from "react";
 import Post from "../post/Post";
 import "./posts.css";
 
-export default function Posts() {
+export default function Posts({ posts }) {
   return (
     <div className="posts">
-      <Post />
+      {posts.map((item) => (
+        <Post item={item} key={item._id} />
+      ))}
     </div>
   );
 }
