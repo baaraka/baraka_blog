@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function TopBar() {
+  const pf = "http://localhost:8000/images/";
+
   const { user, dispatch } = useContext(AuthContext);
 
   const handleLogout = (e) => {
@@ -52,11 +54,7 @@ export default function TopBar() {
             to="/settings"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            <img
-              className="topImg"
-              src="https://images.unsplash.com/photo-1519669417670-68775a50919c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhhY2tlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-              alt=""
-            />
+            <img className="topImg" src={pf + user.profilePic} alt="" />
           </Link>
         ) : (
           <ul className="topList">
