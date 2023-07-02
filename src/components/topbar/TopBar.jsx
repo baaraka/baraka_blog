@@ -48,7 +48,12 @@ export default function TopBar() {
         </ul>
       </div>
       <div className="topRight">
-        <span style={{ marginRight: "10px" }}>{user && user.username}</span>
+        <Link
+          to="/settings"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <span style={{ marginRight: "10px" }}>{user && user.username}</span>
+        </Link>
         {user ? (
           <Link
             to="/settings"
