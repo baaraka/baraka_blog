@@ -22,8 +22,12 @@ const AuthReducer = (state, action) => {
       return { user: action.payload, loading: false, error: null };
     case "REGISTER_FAILURE":
       return { user: null, loading: false, error: action.payload };
-    case "UPDATE_USER":
-      return { user: action.payload, loading: false, error: action.payload };
+    case "UPDATE_START":
+      return { ...state, loading: true, error: null };
+    case "UPDATE_SUCCESS":
+      return { user: action.payload, loading: false, error: null };
+    case "UPDATE_FAILURE":
+      return { user: null, loading: false, error: action.payload };
     case "LOGOUT":
       return { user: null, loading: false, error: null };
     default:
